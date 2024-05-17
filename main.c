@@ -160,6 +160,8 @@ void stop (){
 
 //config uart
 void UART_Init(){
+	RCC -> APB1ENR |= (1<<17) ; 
+	USART2 -> BRR = (104 << 4) | (3<<0) ;
 	USART2 -> CR1 |= (1<<2) | (1<<3);
 	USART2 -> CR1 |= (1<<13);
 	USART2 -> CR1 |= (1<<5); 
